@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <title>Klassekart Pro v6.0</title>
+</head>
+<body>
+    <div class="main-wrapper">
+        <aside class="sidebar">
+            <button class="secondary-btn" id="modusBtn" onclick="toggleElevModus()">Elev-modus: AV</button>
+            
+            <div id="settingsContainer">
+                <h2>Innstillinger</h2>
+                <div class="controls">
+                    <div class="control-group">
+                        <label>Velg elevliste (CSV):</label>
+                        <input type="file" id="csvFile" accept=".csv">
+                    </div>
+                    
+                    <div id="advancedSettings">
+                        <div class="control-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="miksKjonn" checked> 
+                                Miks gutt/jente (Forbyr G-G)
+                            </label>
+                        </div>
+                        <div class="control-group">
+                            <label>Unngå at disse sitter sammen:</label>
+                            <textarea id="rulesInput" rows="3" placeholder="Navn, Navn"></textarea>
+                            <small>Navn på hver sin side av komma.</small>
+                        </div>
+                    </div>
+
+                    <button class="primary-btn" onclick="genererKart()">Generer nytt kart</button>
+                    <button class="save-btn" onclick="lagreSomBilde()">Lagre som bilde</button>
+                    <p style="font-size: 11px; color: #666; margin-top: 15px;">
+                        💡 <strong>Slik låser du:</strong> Høyreklikk på en pult for å låse/låse opp en elev til plassen.
+                    </p>
+                </div>
+            </div>
+        </aside>
+
+        <main class="content">
+            <div class="klasserom-wrapper" id="captureArea">
+                <div class="tavle">TAVLE</div>
+                <div id="klasserom"></div>
+            </div>
+        </main>
+    </div>
+
+    <div id="contextMenu" class="context-menu hidden">
+        <ul>
+            <li onclick="handleMenuSelection()">Lås / Lås opp plass</li>
+        </ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

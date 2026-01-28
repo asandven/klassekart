@@ -1,0 +1,25 @@
+body { margin: 0; font-family: 'Segoe UI', sans-serif; background-color: #f0f2f5; }
+.main-wrapper { display: flex; min-height: 100vh; }
+.sidebar { width: 300px; background: white; padding: 25px; box-shadow: 2px 0 10px rgba(0,0,0,0.1); overflow-y: auto; }
+.control-group { margin-bottom: 20px; }
+.control-group label { display: block; margin-bottom: 5px; font-weight: 600; }
+textarea { width: 100%; border: 1px solid #ccc; border-radius: 4px; padding: 8px; font-family: inherit; box-sizing: border-box; resize: vertical; }
+.primary-btn { width: 100%; padding: 15px; background-color: #4a90e2; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; }
+.secondary-btn { width: 100%; padding: 12px; background-color: #6c757d; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; margin-bottom: 10px; }
+.save-btn { width: 100%; padding: 15px; background-color: #28a745; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 10px; }
+.hidden { display: none !important; }
+.content { flex-grow: 1; padding: 40px; display: flex; justify-content: center; }
+.klasserom-wrapper { display: inline-flex; flex-direction: column; align-items: center; gap: 30px; background: #fff; padding: 40px; border-radius: 20px; }
+.tavle { width: 500px; height: 40px; background-color: #2d5a27; color: white; display: flex; align-items: center; justify-content: center; border: 4px solid #5d4037; border-radius: 4px; font-weight: bold; letter-spacing: 5px; }
+#klasserom { display: grid; grid-template-columns: repeat(3, 140px) 50px repeat(2, 140px) 50px repeat(3, 140px); gap: 15px 0; }
+.pult { width: 130px; height: 80px; background: white; border: 3px solid #eee; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: bold; cursor: grab; position: relative; }
+.pult.gutt { border-color: #4a90e2; background-color: #f0f7ff; }
+.pult.jente { border-color: #e24a4a; background-color: #fff0f0; }
+.pult.locked { border: 4px double #333; }
+.pult.locked::after { content: '🔒'; position: absolute; top: 2px; right: 2px; font-size: 10px; }
+.context-menu { position: absolute; background: white; border: 1px solid #ccc; box-shadow: 2px 2px 10px rgba(0,0,0,0.2); z-index: 1000; border-radius: 4px; }
+.context-menu ul { list-style: none; margin: 0; padding: 5px; }
+.context-menu li { padding: 8px 15px; cursor: pointer; font-size: 14px; }
+.context-menu li:hover { background: #f0f2f5; }
+.gang { width: 50px; }
+.tom-plass { width: 130px; height: 80px; }
