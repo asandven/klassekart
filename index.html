@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <title>IKT-Pus Portal</title>
 </head>
 <body>
@@ -13,35 +14,41 @@
                 <img src="puslogo.png" alt="IKT-Pus Logo" class="brand-img">
                 <span class="brand-text">IKT-<span class="highlight">Pus</span></span>
             </div>
-            <ul class="nav-links">
+            
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+            <ul class="nav-links" id="navLinks">
                 <li><button class="nav-btn active" onclick="visSeksjon('ukeplan', this)">Ukeplan 8C</button></li>
-                <li><button class="nav-btn" onclick="visSeksjon('proveplan', this)">Prøveplan 8.trinn</button></li>
+                <li><button class="nav-btn" onclick="visSeksjon('proveplan', this)">Prøveplan</button></li>
                 <li><button class="nav-btn login-btn" onclick="visSeksjon('login', this)">Login</button></li>
             </ul>
         </div>
     </nav>
+
     <main class="main-content">
         <section id="ukeplan" class="tab-content">
             <div class="content-header">
                 <h1>Velkommen til 8C</h1>
-                <p class="subtitle">Ukeplaner og info for 25/26.</p>
+                <p class="subtitle">Ukeplaner og informasjon for skoleåret 25/26.</p>
             </div>
+            
             <div class="action-card">
+                <div class="card-visual">
+                    <div class="calendar-icon">
+                        <div class="cal-top"></div>
+                        <div class="cal-body">26</div>
+                    </div>
+                </div>
                 <div class="card-content">
                     <h2>Digital Ukeplan</h2>
-                    <p>Åpnes i ny fane for tilgang uten pålogging.</p>
-                    <a href="https://vestfold.sharepoint.com/:f:/s/Section_13fa9d3e-bd3e-4c47-b5e3-1fe9ef9965e9/IgAhVF7atUFHRZbg5eYcHTJMAXfa_JViUWRXqKFH9fMozGs" target="_blank" rel="noreferrer" class="btn-main">Åpne ukeplan ↗</a>
+                    <p>Planen oppdateres live i OneNote. Klikk under for å åpne den direkte uten pålogging.</p>
+                    <a href="https://vestfold.sharepoint.com/:f:/s/Section_13fa9d3e-bd3e-4c47-b5e3-1fe9ef9965e9/IgAhVF7atUFHRZbg5eYcHTJMAXfa_JViUWRXqKFH9fMozGs" 
+                       target="_blank" rel="noreferrer" class="btn-main">Åpne ukeplan ↗</a>
                 </div>
             </div>
         </section>
-        <section id="login" class="tab-content hidden">
-            <div class="auth-card">
-                <h2>Lærer-innlogging</h2>
-                <input type="password" id="pinCode" placeholder="••••">
-                <button class="btn-main" onclick="sjekkLogin()">Logg inn</button>
-            </div>
-        </section>
-    </main>
+
+        </main>
     <script src="script.js"></script>
 </body>
 </html>
