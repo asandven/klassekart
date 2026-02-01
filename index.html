@@ -3,59 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
-    <title>Klassekart Pro v6.0</title>
+    <title>IKT-Pus Portal</title>
 </head>
 <body>
-    <div class="main-wrapper">
-        <aside class="sidebar">
-            <button class="secondary-btn" id="modusBtn" onclick="toggleElevModus()">Elev-modus: AV</button>
+    <nav class="top-bar">
+        <div class="nav-container">
+            <div class="brand">
+                <img src="puslogo.png" alt="IKT-Pus Logo" class="brand-img">
+                <span class="brand-text">IKT-<span class="highlight">Pus</span></span>
+            </div>
             
-            <div id="settingsContainer">
-                <h2>Innstillinger</h2>
-                <div class="controls">
-                    <div class="control-group">
-                        <label>Velg elevliste (CSV):</label>
-                        <input type="file" id="csvFile" accept=".csv">
-                    </div>
-                    
-                    <div id="advancedSettings">
-                        <div class="control-group">
-                            <label class="checkbox-label">
-                                <input type="checkbox" id="miksKjonn" checked> 
-                                Miks gutt/jente (Forbyr G-G)
-                            </label>
-                        </div>
-                        <div class="control-group">
-                            <label>Unngå at disse sitter sammen:</label>
-                            <textarea id="rulesInput" rows="3" placeholder="Navn, Navn"></textarea>
-                            <small>Navn på hver sin side av komma.</small>
-                        </div>
-                    </div>
+            <ul class="nav-links">
+                <li><button class="nav-btn active" onclick="visSeksjon('ukeplan', this)">Ukeplan 8C</button></li>
+                <li><button class="nav-btn" onclick="visSeksjon('proveplan', this)">Prøveplan 8.trinn</button></li>
+                <li><button class="nav-btn login-btn" onclick="visSeksjon('login', this)">Login</button></li>
+            </ul>
+        </div>
+    </nav>
 
-                    <button class="primary-btn" onclick="genererKart()">Generer nytt kart</button>
-                    <button class="save-btn" onclick="lagreSomBilde()">Lagre som bilde</button>
-                    <p style="font-size: 11px; color: #666; margin-top: 15px;">
-                        💡 <strong>Slik låser du:</strong> Høyreklikk på en pult for å låse/låse opp en elev til plassen.
-                    </p>
+    <main class="main-content">
+        <section id="ukeplan" class="tab-content">
+            <div class="content-header">
+                <h1>Velkommen til 8C</h1>
+                <p class="subtitle">Her finner du ukeplaner og informasjon for skoleåret 25/26.</p>
+            </div>
+            
+            <div class="action-card">
+                <div class="card-visual">
+                    <div class="calendar-icon">
+                        <div class="cal-top"></div>
+                        <div class="cal-body">26</div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h2>Digital Ukeplan</h2>
+                    <p>Planen oppdateres live i OneNote. Klikk under for å åpne den direkte i nettleseren uten krav om pålogging.</p>
+                    <a href="https://vestfold.sharepoint.com/:f:/s/Section_13fa9d3e-bd3e-4c47-b5e3-1fe9ef9965e9/IgAhVF7atUFHRZbg5eYcHTJMAXfa_JViUWRXqKFH9fMozGs" 
+                       target="_blank" 
+                       rel="noreferrer" 
+                       class="btn-main">
+                       Åpne ukeplan ↗
+                    </a>
                 </div>
             </div>
-        </aside>
+        </section>
 
-        <main class="content">
-            <div class="klasserom-wrapper" id="captureArea">
-                <div class="tavle">TAVLE</div>
-                <div id="klasserom"></div>
+        <section id="proveplan" class="tab-content hidden">
+            <div class="content-header">
+                <h1>Prøveplan 8. trinn</h1>
+                <p class="subtitle">Oversikt over kommende vurderinger.</p>
             </div>
-        </main>
-    </div>
+            <div class="action-card">
+                <p>Prøveplanen for 2026 er under utarbeidelse.</p>
+            </div>
+        </section>
 
-    <div id="contextMenu" class="context-menu hidden">
-        <ul>
-            <li onclick="handleMenuSelection()">Lås / Lås opp plass</li>
-        </ul>
-    </div>
+        <section id="login" class="tab-content hidden">
+            <div class="login-wrapper">
+                <div class="auth-card">
+                    <h2>Lærer-innlogging</h2>
+                    <p>Skriv inn PIN for lærertilgang.</p>
+                    <input type="password" id="pinCode" placeholder="••••">
+                    <button class="btn-main" onclick="sjekkLogin()">Logg inn</button>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <script src="script.js"></script>
 </body>
