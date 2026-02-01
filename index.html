@@ -14,51 +14,37 @@
                 <img src="puslogo.png" alt="IKT-Pus Logo" class="brand-img">
                 <span class="brand-text">IKT-<span class="highlight">Pus</span></span>
             </div>
-            
-            <button class="menu-toggle" id="menuToggle" onclick="toggleMenu()">☰</button>
-
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
             <ul class="nav-links" id="navLinks">
-                <li><button class="nav-btn active" onclick="visSeksjon('ukeplan', this)">Ukeplan 8C</button></li>
-                <li><button class="nav-btn" onclick="visSeksjon('proveplan', this)">Prøveplan</button></li>
-                <li><button class="nav-btn login-btn" onclick="visSeksjon('login', this)">Login</button></li>
+                <li><button class="nav-btn active" onclick="visSeksjon('oversikt', this)">Uke- og Prøveplan</button></li>
+                <li><button class="nav-btn login-btn" onclick="visSeksjon('login', this)">Lærer-Login</button></li>
             </ul>
         </div>
     </nav>
 
     <main class="main-content">
-        <section id="ukeplan" class="tab-content">
+        <section id="oversikt" class="tab-content">
             <div class="content-header">
                 <h1>Velkommen til 8C</h1>
-                <p class="subtitle">Ukeplaner og informasjon for skoleåret 25/26.</p>
+                <p class="subtitle">Her finner du ukeplaner og prøveoversikt for skoleåret 25/26.</p>
             </div>
+            
             <div class="action-card">
-                <div class="card-visual">
-                    <div class="calendar-icon">
-                        <div class="cal-top"></div>
-                        <div class="cal-body">26</div>
-                    </div>
-                </div>
+                <div class="calendar-icon"><div class="cal-top"></div><div class="cal-body">8C</div></div>
                 <div class="card-content">
-                    <h2>Digital Ukeplan</h2>
-                    <p>Planen oppdateres live i OneNote. Klikk under for å åpne den direkte uten pålogging.</p>
+                    <h2>Uke- og Prøveplan</h2>
+                    <p>Klikk under for å åpne fellesområdet i OneNote. Der kan du velge mellom <strong>"Ukeplan"</strong> eller <strong>"Prøveplan"</strong> i menyen til venstre.</p>
                     <a href="https://vestfold.sharepoint.com/:f:/s/Section_13fa9d3e-bd3e-4c47-b5e3-1fe9ef9965e9/IgAhVF7atUFHRZbg5eYcHTJMAXfa_JViUWRXqKFH9fMozGs" 
-                       target="_blank" rel="noreferrer" class="btn-main">Åpne ukeplan ↗</a>
+                       target="_blank" rel="noreferrer" class="btn-main">Åpne planer ↗</a>
                 </div>
             </div>
-        </section>
-
-        <section id="proveplan" class="tab-content hidden">
-            <div class="content-header"><h1>Prøveplan</h1><p class="subtitle">Vurderingsoversikt.</p></div>
-            <div class="action-card"><p>Prøveplanen kommer snart.</p></div>
         </section>
 
         <section id="login" class="tab-content hidden">
-            <div class="login-wrapper">
-                <div class="auth-card">
-                    <h2>Lærer-innlogging</h2>
-                    <input type="password" id="pinCode" placeholder="••••">
-                    <button class="btn-main" onclick="sjekkLogin()">Logg inn</button>
-                </div>
+            <div class="auth-card">
+                <h2>Lærer-innlogging</h2>
+                <input type="password" id="pinCode" placeholder="••••">
+                <button class="btn-main" onclick="sjekkLogin()">Logg inn</button>
             </div>
         </section>
     </main>
