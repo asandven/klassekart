@@ -1,16 +1,23 @@
 function toggleMenu() {
-    document.getElementById('navLinks').classList.toggle('show');
+    const nav = document.getElementById('navLinks');
+    nav.classList.toggle('show');
 }
 
 function visSeksjon(id, el) {
-    // Lukker menyen på mobil etter valg
-    document.getElementById('navLinks').classList.remove('show');
+    // Skjul mobilmenyen etter valg
+    const nav = document.getElementById('navLinks');
+    nav.classList.remove('show');
 
+    // Oppdater aktive knapper
     document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
     if (el) el.classList.add('active');
     
+    // Vis riktig innhold
     document.querySelectorAll('.tab-content').forEach(section => section.classList.add('hidden'));
     document.getElementById(id).classList.remove('hidden');
+    
+    // Scroll til toppen av innholdet på mobil
+    window.scrollTo(0, 0);
 }
 
 function sjekkLogin() {

@@ -15,7 +15,7 @@
                 <span class="brand-text">IKT-<span class="highlight">Pus</span></span>
             </div>
             
-            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <button class="menu-toggle" id="menuToggle" onclick="toggleMenu()">☰</button>
 
             <ul class="nav-links" id="navLinks">
                 <li><button class="nav-btn active" onclick="visSeksjon('ukeplan', this)">Ukeplan 8C</button></li>
@@ -31,7 +31,6 @@
                 <h1>Velkommen til 8C</h1>
                 <p class="subtitle">Ukeplaner og informasjon for skoleåret 25/26.</p>
             </div>
-            
             <div class="action-card">
                 <div class="card-visual">
                     <div class="calendar-icon">
@@ -48,7 +47,21 @@
             </div>
         </section>
 
-        </main>
+        <section id="proveplan" class="tab-content hidden">
+            <div class="content-header"><h1>Prøveplan</h1><p class="subtitle">Vurderingsoversikt.</p></div>
+            <div class="action-card"><p>Prøveplanen kommer snart.</p></div>
+        </section>
+
+        <section id="login" class="tab-content hidden">
+            <div class="login-wrapper">
+                <div class="auth-card">
+                    <h2>Lærer-innlogging</h2>
+                    <input type="password" id="pinCode" placeholder="••••">
+                    <button class="btn-main" onclick="sjekkLogin()">Logg inn</button>
+                </div>
+            </div>
+        </section>
+    </main>
     <script src="script.js"></script>
 </body>
 </html>
