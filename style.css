@@ -30,6 +30,12 @@ body {
     align-items: center; 
 }
 
+a.nav-btn {
+    text-decoration: none;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: normal;
+}
 .brand { display: flex; align-items: center; gap: 10px; }
 .brand-img { height: 45px; }
 .brand-text { color: white; font-size: 1.2rem; font-weight: 800; }
