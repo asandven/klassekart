@@ -17,29 +17,37 @@
             <button class="menu-toggle" onclick="toggleMenu()">☰</button>
             <ul class="nav-links" id="navLinks">
                 <li><button class="nav-btn active" onclick="visSeksjon('oversikt', this)">Uke- og Prøveplan</button></li>
+                <li><a href="https://asandven.github.io/matte-agent" target="_blank" rel="noreferrer" class="nav-btn">Matte-Agent</a></li>
                 <li><button class="nav-btn login-btn" onclick="visSeksjon('login', this)">Lærer-Login</button></li>
             </ul>
         </div>
     </nav>
-
     <main class="main-content">
         <section id="oversikt" class="tab-content">
             <div class="content-header">
                 <h1>Velkommen til 8C</h1>
                 <p class="subtitle">Her finner du alle oversikter for skoleåret 25/26.</p>
             </div>
-            
+
             <div class="action-card">
                 <div class="calendar-icon"><div class="cal-top"></div><div class="cal-body">8C</div></div>
                 <div class="card-content">
                     <h2>Uke- og Prøveplan</h2>
                     <p>Bruk menyen til venstre i OneNote for å bytte mellom de ulike planene.</p>
-                    <a href="https://vestfold.sharepoint.com/:f:/s/Section_13fa9d3e-bd3e-4c47-b5e3-1fe9ef9965e9/IgAhVF7atUFHRZbg5eYcHTJMAXfa_JViUWRXqKFH9fMozGs" 
+                    <a href="https://vestfold.sharepoint.com/:f:/s/Section_13fa9d3e-bd3e-4c47-b5e3-1fe9ef9965e9/IgAhVF7atUFHRZbg5eYcHTJMAXfa_JViUWRXqKFH9fMozGs"
                        target="_blank" rel="noreferrer" class="btn-main">Åpne planer ↗</a>
                 </div>
             </div>
-        </section>
 
+            <div class="action-card">
+                <div class="calendar-icon"><div class="cal-top"></div><div class="cal-body">📐</div></div>
+                <div class="card-content">
+                    <h2>Matte-Agent</h2>
+                    <p>Øv til tentamen med AI-hjelp. Still spørsmål, få hint og sjekk svarene dine.</p>
+                    <a href="https://asandven.github.io/matte-agent" target="_blank" rel="noreferrer" class="btn-main">Åpne Matte-Agent ↗</a>
+                </div>
+            </div>
+        </section>
         <section id="login" class="tab-content hidden">
             <div class="auth-card">
                 <h2>Lærer-innlogging</h2>
